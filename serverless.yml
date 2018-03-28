@@ -1,8 +1,13 @@
 service: serverless-iopipe-demo
 
+plugins:
+  - serverless-plugin-iopipe
+
 provider:
   name: aws
   runtime: nodejs6.10
+  environment:
+    IOPIPE_TOKEN: ${env:IOPIPE_TOKEN}
 
 functions:
   hello:
@@ -10,5 +15,19 @@ functions:
     events:
       - http:
           path: hello
+          method: get
+          cors: true
+  helloWithError:
+    handler: handler.withError
+    events:
+      - http:
+          path: hello/error
+          method: get
+          cors: true
+  helloWithTrace:
+    handler: handler.withTrace
+    events:
+      - http:
+          path: hello/trace
           method: get
           cors: true

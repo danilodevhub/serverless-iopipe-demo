@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/danilodevhub/serverless-iopipe-demo/issues"
   },
-  "homepage": "https://github.com/danilodevhub/serverless-iopipe-demo#readme"
+  "homepage": "https://github.com/danilodevhub/serverless-iopipe-demo#readme",
+  "dependencies": {
+    "@iopipe/iopipe": "^1.6.0"
+  },
+  "devDependencies": {
+    "serverless-plugin-iopipe": "^1.2.0"
+  }
 }
