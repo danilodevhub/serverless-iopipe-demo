@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/danilodevhub/serverless-iopipe-demo#readme",
   "dependencies": {
-    "@iopipe/iopipe": "^1.6.0"
+    "iopipe": "^1.6.0",
+    "iopipe-plugin-trace": "^0.2.0"
   },
   "devDependencies": {
     "serverless-plugin-iopipe": "^1.2.0"

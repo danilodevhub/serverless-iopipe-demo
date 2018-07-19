@@ -5,27 +5,30 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs8.10
   environment:
     IOPIPE_TOKEN: ${env:IOPIPE_TOKEN}
 
+custom:
+  iopipeExclude: helloWithTrace
+
 functions:
   hello:
-    handler: handler.hello
+    handler: withHello.handler
     events:
       - http:
           path: hello
           method: get
           cors: true
   helloWithError:
-    handler: handler.withError
+    handler: withError.handler
     events:
       - http:
           path: hello/error
           method: get
           cors: true
   helloWithTrace:
-    handler: handler.withTrace
+    handler: withTrace.handler
     events:
       - http:
           path: hello/trace
